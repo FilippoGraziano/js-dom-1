@@ -1,21 +1,23 @@
 const img = document.querySelector(`img`);
 const button = document.querySelector(`button`);
 
-const offLamp = () => {
+let onLamp = false;
 
-    img.src = `img/white_lamp.png`
-    button.innerHTML = `Accendi`;
-    button.removeEventListener(`click`, offLamp);
-    console.log(`hai spento`)
-};
-
-const onLamp = () => {
-
-    img.src = `img/yellow_lamp.png`;
-    button.innerHTML = `Spegni`;
-    button.addEventListener(`click`, offLamp);
-    console.log(`hai acceso`)
+const onOffLamp = () => {
     
+    if (onLamp === false) {
+        //r Accendi la lampadina
+        img.src = `img/yellow_lamp.png`;
+        button.innerHTML = `Spegni`;
+        console.log(`hai acceso`)
+        onLamp = true
+    } else {
+        //r Spegni la lampadina
+        img.src = `img/white_lamp.png`
+        button.innerHTML = `Accendi`;
+        console.log(`hai spento`)
+        onLamp = false
+    };
 };
 
-button.addEventListener(`click`, onLamp);
+button.addEventListener(`click`, onOffLamp);
