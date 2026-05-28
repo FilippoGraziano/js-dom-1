@@ -5,7 +5,7 @@ let onLamp = false;
 
 const onOffLamp = () => {
     
-    if (onLamp === false) {
+    if (!onLamp) {
         //r Accendi la lampadina
         img.src = `img/yellow_lamp.png`;
         button.innerHTML = `Spegni`;
